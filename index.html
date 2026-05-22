@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarvis — Personal AI Assistant</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 24px;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #fafafa;
+    }
+    h1 { font-size: 34px; margin-bottom: 6px; }
+    h2 { margin-top: 36px; font-size: 20px; color: #2a2a2a; }
+    .tagline { color: #666; font-size: 17px; margin-bottom: 32px; }
+    section { margin: 24px 0; }
+    a { color: #2563eb; }
+    code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 0.92em; }
+    .footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Jarvis</h1>
+  <p class="tagline">A personal, locally-hosted AI assistant for a single user.</p>
+
+  <section>
+    <h2>What this is</h2>
+    <p>
+      Jarvis is a private AI assistant running on a Linux server in the operator's home.
+      It is built and operated by a single individual (Ryan Flores) for their own use.
+      It does not offer accounts, does not serve other users, and is not a commercial
+      product.
+    </p>
+  </section>
+
+  <section>
+    <h2>How Plaid is used</h2>
+    <p>
+      Jarvis uses Plaid to read transaction history and account balances from the
+      operator's own bank, credit union, and credit card accounts. The operator links
+      accounts only to their own personal finances. Read-only access to the
+      <code>transactions</code> product is the sole scope; Jarvis does not request
+      payment initiation, transfer, or any money-movement products.
+    </p>
+  </section>
+
+  <section>
+    <h2>Data storage</h2>
+    <p>
+      Bank access tokens are encrypted at rest using Fernet (AES-128-CBC with HMAC
+      authentication) on the local Linux server. The encryption key is derived via
+      PBKDF2-SHA256 (600,000 iterations) from a passphrase that exists only on that
+      machine. Transaction and account data live in a local SQLite database on the
+      same server. No financial data is shared with third parties, sent to external
+      analytics services, or transmitted off the operator's network for any purpose
+      other than direct Plaid API calls.
+    </p>
+  </section>
+
+  <section>
+    <h2>Disconnecting accounts</h2>
+    <p>
+      The operator can revoke Plaid access at any time via their bank's website
+      or via <a href="https://my.plaid.com/">Plaid Portal</a>. Locally, the operator
+      can delete the encrypted access-token entry from their server's vault, which
+      makes any further API calls impossible.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      For security or privacy questions, email
+      <a href="mailto:ryanjflores6@gmail.com">ryanjflores6@gmail.com</a>.
+    </p>
+  </section>
+
+  <div class="footer">
+    Jarvis is operated by a single individual for personal use only. Not affiliated
+    with any commercial entity.
+  </div>
+</body>
+</html>
