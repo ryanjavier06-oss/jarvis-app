@@ -5,6 +5,11 @@
 ## Project facts
 
 - **Verify commands:** `none (static site)` — single `index.html` with inline CSS, no build/lint/test, no package.json.
+- **Stop gate:** `none (static site)` — nothing to build, lint or test; UI edits cannot certify without a `.claude/verification.json`.
+- **isolation:** worktree
+- **push_policy:** main-gated
+- **open_pr:** false
+- **trust:** propose
 - **Stack:** Static HTML + inline CSS. No framework, no JS, no dependencies.
 - **Deploy:** GitHub Pages from `main` → https://ryanjflores6.github.io/jarvis-app/ (origin: github.com/ryanjavier06-oss/jarvis-app). Pushing to `main` publishes; there is no build step.
 - **Priority tracker:** `spec/FIX_PLAN.md` (not yet present — create if work warrants it).
