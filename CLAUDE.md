@@ -4,8 +4,7 @@
 
 ## Project facts
 
-- **Verify commands:** `none (static site)` — single `index.html` with inline CSS, no build/lint/test, no package.json.
-- **Stop gate:** `none (static site)` — nothing to build, lint or test; UI edits cannot certify without a `.claude/verification.json`.
+- **Verify commands:** `none (static site)` — single `index.html` with inline CSS, no build/lint/test, no package.json. task-verify executes this literally and fails, so no receipt is obtainable here by design: a UI claim reports `RUN_STATUS: blocked` (base rule 14) rather than inventing a token check. No Stop gate bullet for the same reason; stop-verify nudges only.
 - **isolation:** worktree
 - **push_policy:** main-gated
 - **open_pr:** false
