@@ -1,0 +1,12 @@
+{
+  "name": "jarvis-app-verification",
+  "version": "0.0.0",
+  "scripts": {
+    "test:ui": "node scripts/verify-ui.mjs",
+    "test:verification": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.59.1"
+  },
+  "private": true
+}
